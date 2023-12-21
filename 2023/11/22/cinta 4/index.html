@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="lindeq">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第七章群 Z*17 有多少个生成元？已知 3 是其中一个生成元，请问 9 和 10 是否生成元 $Z^∗_{17}$ 有 $8$ 个生成元。  由 广义原根定理 [1] ，$Z^∗_{17}$ 是循环群。 由 定义 [2] ，$Z^∗_{17}$ 的阶 $|Z^∗_{17}|&#x3D;\phi(17)&#x3D;16$ 由 推论 [3] ，$Z^∗_{17}$  的生成元个数为 $\phi(16">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CINTA homework four">
+<meta property="og:url" content="http://example.com/2023/11/22/cinta%204/index.html">
+<meta property="og:site_name" content="lindeq-blog">
+<meta property="og:description" content="第七章群 Z*17 有多少个生成元？已知 3 是其中一个生成元，请问 9 和 10 是否生成元 $Z^∗_{17}$ 有 $8$ 个生成元。  由 广义原根定理 [1] ，$Z^∗_{17}$ 是循环群。 由 定义 [2] ，$Z^∗_{17}$ 的阶 $|Z^∗_{17}|&#x3D;\phi(17)&#x3D;16$ 由 推论 [3] ，$Z^∗_{17}$  的生成元个数为 $\phi(16">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-22T15:42:36.075Z">
+<meta property="article:modified_time" content="2023-11-26T08:35:57.811Z">
+<meta property="article:author" content="lindeq">
+<meta property="article:tag" content="CINTA">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>CINTA homework four - lindeq-blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":40,"cursorChar":"(❁´◡`❁)","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"4k6QeVAcCH9PY7eyOk3ZWfpt-gzGzoHsz","app_key":"KM6cdkh5cNvivAIKkZVDYDog","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Linde-q</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CINTA homework four"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        lindeq
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-11-22 23:42" pubdate>
+          2023年11月22日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">CINTA homework four</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：25 天前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><h3 id="群-Z-17-有多少个生成元？已知-3-是其中一个生成元，请问-9-和-10-是否生成元"><a href="#群-Z-17-有多少个生成元？已知-3-是其中一个生成元，请问-9-和-10-是否生成元" class="headerlink" title="群 Z*17 有多少个生成元？已知 3 是其中一个生成元，请问 9 和 10 是否生成元"></a>群 Z*17 有多少个生成元？已知 3 是其中一个生成元，请问 9 和 10 是否生成元</h3><ol>
+<li><p>$Z^∗_{17}$ 有 $8$ 个生成元。</p>
+<ul>
+<li>由 <em>广义原根定理</em> <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="> *广义原根定理* ：如果 $n ∈ Z$ 形如 $2、4、p^e 和 2p^e，$ 对所有素数 $p > 2$ 和所有正整数 $e$ ，则 $Z^∗_n$ 是循环群。">[1]</span></a></sup> ，$Z^∗_{17}$ 是循环群。</li>
+<li>由 <em>定义</em> <sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="> 有限群的阶（order）被定义为群元素的个数。记为 $|G| = n。$ 设 $p$ 是素数，则群 $Z_p$ 的阶是 p">[2]</span></a></sup> ，$Z^∗_{17}$ 的阶 $|Z^∗_{17}|&#x3D;\phi(17)&#x3D;16$</li>
+<li>由 <em>推论</em> <sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="> 设群 $G=$ 是阶为 $n$ 的循环群，则群 $G$ 恰有 $\phi(n)$ 个生成元。">[3]</span></a></sup> ，$Z^∗_{17}$  的生成元个数为 $\phi(16)&#x3D;\phi(2^4)&#x3D;16*(1-\frac{1}{2})&#x3D;8$ .</li>
+</ul>
+</li>
+<li><p>$9$ 不是生成元, $10$是生成元.</p>
+<ul>
+<li>$9&#x3D;3^2\mod 17,9$ 的阶为 $16&#x2F;gcd(2,16)&#x3D;8$  <sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="> 设群 $G=$ 是阶为 $n$ 的循环群。如果 $h = g^k$ ，则 $h$ 的阶为 $n/d$，其中 $d = gcd(k, n)$">[4]</span></a></sup> , 故由 <em>定义</em> <sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><span class="hint--top hint--rounded" aria-label="> 如果 a 模 n 的阶等于模 n 下最大可能的阶( $\phi(n)$ )，则称 a 是模 n 的原根/生成元。">[5]</span></a></sup> , $9$ 不是生成元 .</li>
+<li>$10&#x3D;3^3\mod 17,10$ 的阶为 $16&#x2F;gcd(3,16)&#x3D;16&#x3D;\phi(17)$ 故 $10$ 是生成元.</li>
+</ul>
+</li>
+</ol>
+<h3 id="p和q-是两个不同的素数-Z-pq-有多少个生成元-r-是任意正整数-Z-p-r-有多少个生成元"><a href="#p和q-是两个不同的素数-Z-pq-有多少个生成元-r-是任意正整数-Z-p-r-有多少个生成元" class="headerlink" title="$p和q$是两个不同的素数, $Z_{pq}$ 有多少个生成元? $r$ 是任意正整数, $Z_{p^r}$ 有多少个生成元?"></a>$p和q$是两个不同的素数, $Z_{pq}$ 有多少个生成元? $r$ 是任意正整数, $Z_{p^r}$ 有多少个生成元?</h3><ol>
+<li>$Z_{pq}$ 有 $(p-1)(q-1)$ 个生成元<ul>
+<li>$Z_{pq}$ 的阶为 $pq$ <sup id="fnref:6" class="footnote-ref"><a href="#fn:6" rel="footnote"><span class="hint--top hint--rounded" aria-label=">设 n 为整数，Zn = {0, 1, 2, · · · , n − 1} 在模 n 的加法操作下形成群。">[6]</span></a></sup>, 则生成元的个数为 $\phi(pq)&#x3D;pq*(1-\frac{1}{p})*(1-\frac{1}{q})&#x3D;(p-1)(q-1)$</li>
+</ul>
+</li>
+<li>$Z_{p^r}$ 有 $p^r-p^{r-1}$ 个生成元. <ul>
+<li>$Z_{p^r}$ 的阶为 $p^r$ , 则生成元的个数为$\phi(p^r)&#x3D;p^r*(1-\frac{1}{p})&#x3D;p^r-p^{r-1}$</li>
+</ul>
+</li>
+</ol>
+<h3 id="证明：如果群-G-没有非平凡子群，则群-G-是循环群"><a href="#证明：如果群-G-没有非平凡子群，则群-G-是循环群" class="headerlink" title="证明：如果群 G 没有非平凡子群，则群 G 是循环群"></a>证明：如果群 G 没有非平凡子群，则群 G 是循环群</h3><ul>
+<li>$G$的平凡子群包括 ${e} 和 G$ 本身, 由题, 使用反证法:<ol>
+<li>令 $G&#x3D;{e} , 则 G 只有平凡子集. 并且 G&#x3D;{e^k,\forall k\in Z}&#x3D;{e}$ 是循环群</li>
+<li>设群 $G 不是循环群, 则令 G&#x3D;{g^k:k \in Z}\cup H, H是一个集合 , 则G有一个非平凡子群G’&#x3D;{g^k:k \in Z}, 与题设矛盾. 故群G只能是循环群.$</li>
+</ol>
+</li>
+</ul>
+<h3 id="证明：设-G-为任意群，且-g-∈-G。如果存在-m-n-∈-Z-使得-g-m-1-且-g-n-1，则g-d-1-，其中-d-gcd-m-n"><a href="#证明：设-G-为任意群，且-g-∈-G。如果存在-m-n-∈-Z-使得-g-m-1-且-g-n-1，则g-d-1-，其中-d-gcd-m-n" class="headerlink" title="证明：设 G 为任意群，且 g ∈ G。如果存在 m, n ∈ Z 使得 $g^m &#x3D; 1 且 g^n &#x3D; 1，则g^d &#x3D; 1$ ，其中 d &#x3D; gcd(m, n)"></a>证明：设 G 为任意群，且 g ∈ G。如果存在 m, n ∈ Z 使得 $g^m &#x3D; 1 且 g^n &#x3D; 1，则g^d &#x3D; 1$ ，其中 d &#x3D; gcd(m, n)</h3><ul>
+<li>由题, $g^k&#x3D;1,m,n是k的整数倍. $</li>
+<li>由 $d&#x3D;gcd(m,n), d&#x3D;sm+tn, 所以g^d&#x3D;g^{sm+tn}&#x3D;1^s·1^t&#x3D;1$ .</li>
+</ul>
+<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><h3 id="1-设-G-是群，H-是-G-的子群。任取-g-1-g-2-∈-G，则-g-1H-g-2H-当且仅当-g-−1-1g-2-∈-H"><a href="#1-设-G-是群，H-是-G-的子群。任取-g-1-g-2-∈-G，则-g-1H-g-2H-当且仅当-g-−1-1g-2-∈-H" class="headerlink" title="1.$设 G 是群，H 是 G 的子群。任取 g_1, g_2 ∈ G，则 g_1H &#x3D; g_2H 当且仅当 g^{−1}_1g_2 ∈ H$"></a>1.$设 G 是群，H 是 G 的子群。任取 g_1, g_2 ∈ G，则 g_1H &#x3D; g_2H 当且仅当 g^{−1}_1g_2 ∈ H$</h3><ol>
+<li>若 $g_1H &#x3D; g_2H, 任取h_1\in H, 存在h_2\in H, 使得g_1h_1 &#x3D; g_2h_2, 则: $<ul>
+<li>$$g_1^{-1}g_2h_2h_2^{-1}&#x3D;g_1^{-1}g_1h_1h_2^{-1} \to g_1^{-1}g_2&#x3D;h_1h_2^{-1}$$</li>
+<li>所以 $g^{−1}_1g_2 ∈ H$ .</li>
+</ul>
+</li>
+<li>若 $g^{−1}_1g_2 ∈ H, 则存在h\in H, 使得g^{−1}_1g_2&#x3D;h. $<ul>
+<li>$任取h_1,h_2\in H 则: $</li>
+</ul>
+<ol>
+<li>$$g_1h_1&#x3D;g_2(g_2^{-1}g_1)(g_1^{-1}g_1)h_1&#x3D;g_2hh_1\in g_2H$$<ul>
+<li>即 $g_2H\subset g_1H$</li>
+</ul>
+</li>
+<li>同理 $$g_2h_2&#x3D;g_1(g_1^{-1}g_2)(g_2^{-1}g_2)h_2&#x3D;g_1hh_2\in g_1H$$<ul>
+<li>即 $g_1H\subset g_2H$</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>所以 $g_1H &#x3D; g_2H$</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-如果-G-是群，H-是群-G-的子群，且-G-H-2，请证明对任意的-g-∈-G，gH-Hg"><a href="#3-如果-G-是群，H-是群-G-的子群，且-G-H-2，请证明对任意的-g-∈-G，gH-Hg" class="headerlink" title="3. 如果 G 是群，H 是群 G 的子群，且 [G : H] &#x3D; 2，请证明对任意的 g ∈ G，gH &#x3D; Hg"></a>3. 如果 G 是群，H 是群 G 的子群，且 [G : H] &#x3D; 2，请证明对任意的 g ∈ G，gH &#x3D; Hg</h3><ul>
+<li>$\forall h\in H:$<ol>
+<li>若$g\in H,已知 gH&#x3D;H和Hg&#x3D;H,故gH&#x3D;Hg$ <sup id="fnref:7" class="footnote-ref"><a href="#fn:7" rel="footnote"><span class="hint--top hint--rounded" aria-label=">一般情况下，陪集 gH 并不是群，除非 g ∈ H。此时 g 会被 H 吸收掉，即 gH = H。...左陪集与右陪集并没有本质区别，使用右陪集也会得到相同的属性、命题和定理。">[7]</span></a></sup></li>
+<li>若$g\notin H, 由[G : H] &#x3D; 2, 令H’&#x3D;G-H$<ol>
+<li>由于 $gh\in G\notin H, 所以gh\in H’,即 gH\subset H’$,</li>
+<li>$g\in H’,g&#x3D;ghh^-1\in gH, 即H’\subset gH$</li>
+</ol>
+<ul>
+<li>所以 H’&#x3D;gH</li>
+<li>同理,Hg&#x3D;H’, 故gH&#x3D;Hg</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-设-G-是阶为-pq-的群，其中-p-和-q-是素数。请证明-G-的任意非平凡子群是循环群"><a href="#5-设-G-是阶为-pq-的群，其中-p-和-q-是素数。请证明-G-的任意非平凡子群是循环群" class="headerlink" title="5. 设 G 是阶为 pq 的群，其中 p 和 q 是素数。请证明 G 的任意非平凡子群是循环群"></a>5. 设 G 是阶为 pq 的群，其中 p 和 q 是素数。请证明 G 的任意非平凡子群是循环群</h3><ul>
+<li>设H为G的非平凡子群,由拉格朗日定理<sup id="fnref:8" class="footnote-ref"><a href="#fn:8" rel="footnote"><span class="hint--top hint--rounded" aria-label=">*拉格朗日定理* : 设 G 是有限群，H 是 G 的子群，则 |G|/|H| = [G : H]，即 |G|/|H| 等于 H 在 G 上不同左陪集的个数。">[8]</span></a></sup>, |G|&#x2F;|H| &#x3D; [G : H], 则|H|&#x3D;p或q</li>
+<li>由于p和q是素数,所以H是循环群.<sup id="fnref:9" class="footnote-ref"><a href="#fn:9" rel="footnote"><span class="hint--top hint--rounded" aria-label=">设 G 是素数阶有限群，即 |G| = p，p 是素数，则 G 是循环群且任意非单位元元素g ∈ G 是生成元。">[9]</span></a></sup>即G的任意非平凡子群是循环群.</li>
+</ul>
+<h3 id="9-编程完成以下工作：对任意给定的一个素数-p，求出-Z-∗-p-的最小生成元。任取一个整数-n，对大于-1-小于-n-的所有素数-p，求-Z-∗-p-的最小生成元，并求以上最小生成元集合中最大者所对应的素数-p"><a href="#9-编程完成以下工作：对任意给定的一个素数-p，求出-Z-∗-p-的最小生成元。任取一个整数-n，对大于-1-小于-n-的所有素数-p，求-Z-∗-p-的最小生成元，并求以上最小生成元集合中最大者所对应的素数-p" class="headerlink" title="9. 编程完成以下工作：对任意给定的一个素数 p，求出 $Z^∗_p$ 的最小生成元。任取一个整数 n，对大于 1 小于 n 的所有素数 p，求 $Z^∗_p$ 的最小生成元，并求以上最小生成元集合中最大者所对应的素数 p"></a>9. 编程完成以下工作：对任意给定的一个素数 p，求出 $Z^∗_p$ 的最小生成元。任取一个整数 n，对大于 1 小于 n 的所有素数 p，求 $Z^∗_p$ 的最小生成元，并求以上最小生成元集合中最大者所对应的素数 p</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">// 判断一个数是否为素数</span><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isPrime</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-built_in">sqrt</span>(n); i++) <br>    &#123;<span class="hljs-comment">//如果n被i整除，则返回false</span><br>        <span class="hljs-keyword">if</span> (n % i == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;    <span class="hljs-comment">// 反之则返回true </span><br>&#125;<br><br><br><span class="hljs-comment">// 求一个素数 p 的最小生成元，一个生成元的阶等于φ（p),所以就等于p-1；分别遍历1到n-1的1到n-2次方；如果mod p！=1；则最小生成元。</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findPrimitiveRoot</span><span class="hljs-params">(<span class="hljs-type">int</span> p)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; p; ++i) &#123;<br>        <span class="hljs-type">bool</span> flag = <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; p - <span class="hljs-number">1</span>; ++j) &#123;<br>            <span class="hljs-type">int</span> res = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; j; ++k) &#123;<br>                res = (res * i) % p;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (res == <span class="hljs-number">1</span>) &#123;<br>                flag = <span class="hljs-literal">false</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (flag) &#123;<br>            <span class="hljs-keyword">return</span> i;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n = <span class="hljs-number">100</span>; <span class="hljs-comment">// 定义范围，求解大于1小于n的素数的最小生成元</span><br>    <span class="hljs-type">int</span> maxPrimitiveRoot = <span class="hljs-number">-1</span>;<br>    <span class="hljs-type">int</span> maxP = <span class="hljs-number">-1</span>;<br><br>    <span class="hljs-comment">// 找出大于1小于n的所有素数，并计算其最小生成元</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isPrime</span>(i)) &#123;<br>            <span class="hljs-type">int</span> primitiveRoot = <span class="hljs-built_in">findPrimitiveRoot</span>(i);<br>            <span class="hljs-keyword">if</span> (primitiveRoot &gt; maxPrimitiveRoot) &#123;<br>                maxPrimitiveRoot = primitiveRoot;<br>                maxP = i;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 输出最小生成元集合中最大的素数p及其最小生成元</span><br>  cout &lt;&lt; <span class="hljs-string">&quot;最大素数及其生成元 &quot;</span> &lt;&lt; maxP &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; maxPrimitiveRoot &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><sup id="fnref:6" class="footnote-ref"><a href="#fn:6" rel="footnote"><span class="hint--top hint--rounded" aria-label=">设 n 为整数，Zn = {0, 1, 2, · · · , n − 1} 在模 n 的加法操作下形成群。">[6]</span></a></sup> ，群 $Z^∗_p$ 的阶是 $p − 1$ 。设 $n$ 是任意正整数，群 $Z^∗_n$ 的阶是 ϕ(n)。</p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><blockquote>
+<em>广义原根定理</em> ：如果 $n ∈ Z$ 形如 $2、4、p^e 和 2p^e，$ 对所有素数 $p &gt; 2$ 和所有正整数 $e$ ，则 $Z^∗_n$ 是循环群。
+</blockquote>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><blockquote>
+有限群的阶（order）被定义为群元素的个数。记为 $|G| &#x3D; n。$ 设 $p$ 是素数，则群 $Z_p$ 的阶是 p
+</blockquote>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><blockquote>
+设群 $G&#x3D;<g>$ 是阶为 $n$ 的循环群，则群 $G$ 恰有 $\phi(n)$ 个生成元。
+</blockquote>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><blockquote>
+设群 $G&#x3D;<h>$ 是阶为 $n$ 的循环群。如果 $h &#x3D; g^k$ ，则 $h$ 的阶为 $n&#x2F;d$，其中 $d &#x3D; gcd(k, n)$
+</blockquote>
+<a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:5" class="footnote-text"><span><blockquote>
+如果 a 模 n 的阶等于模 n 下最大可能的阶( $\phi(n)$ )，则称 a 是模 n 的原根&#x2F;生成元。
+</blockquote>
+<a href="#fnref:5" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:6" class="footnote-text"><span><blockquote>
+设 n 为整数，Zn &#x3D; {0, 1, 2, · · · , n − 1} 在模 n 的加法操作下形成群。
+</blockquote>
+<a href="#fnref:6" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:7" class="footnote-text"><span><blockquote>
+一般情况下，陪集 gH 并不是群，除非 g ∈ H。此时 g 会被 H 吸收掉，即 gH &#x3D; H。…左陪集与右陪集并没有本质区别，使用右陪集也会得到相同的属性、命题和定理。
+</blockquote>
+<a href="#fnref:7" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:8" class="footnote-text"><span><blockquote>
+<em>拉格朗日定理</em> : 设 G 是有限群，H 是 G 的子群，则 |G|&#x2F;|H| &#x3D; [G : H]，即 |G|&#x2F;|H| 等于 H 在 G 上不同左陪集的个数。
+</blockquote>
+<a href="#fnref:8" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:9" class="footnote-text"><span><blockquote>
+设 G 是素数阶有限群，即 |G| &#x3D; p，p 是素数，则 G 是循环群且任意非单位元元素g ∈ G 是生成元。
+</blockquote>
+<a href="#fnref:9" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CINTA/" class="print-no-link">#CINTA</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CINTA homework four</div>
+      <div>http://example.com/2023/11/22/cinta 4/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>lindeq</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年11月22日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年11月26日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/11/30/cinta%205/" title="CINTA homework five">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CINTA homework five</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/28/cinta%203/" title="CINTA homework three">
+                        <span class="hidden-mobile">CINTA homework three</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
